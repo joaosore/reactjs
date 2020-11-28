@@ -4,10 +4,12 @@ module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: "/"
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -16,22 +18,25 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-        }
+        },
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader' },
-        ]
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
       },
       {
-        test: /.*\.(gif|png|jpe?g)$/i,
+        test: /.*\.(gif|png|jpe?g|svg)$/i,
         use: {
           loader: 'file-loader',
-        }
-      }
-    ]
+        },
+      },
+      {
+        test: /.*\.(mp3|wav|ogg)$/i,
+        use: {
+          loader: 'file-loader',
+        },
+      },
+    ],
   },
 };

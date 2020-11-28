@@ -1,35 +1,31 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es6": true
+  env: {
+    browser: true,
+    es6: true,
+  },
+  extends: ['airbnb', 'prettier', 'prettier/react'],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
-    "extends": [
-      "airbnb",
-      "prettier",
-      "prettier/react"
-    ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parser": 'babel-eslint',
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": "error",
-      "react/jsx-filename-extension": [
-        'warn',
-        { extensions: ['.jsx', '.js'] }
-      ],
-      "import/prefer-default-export": "off"
-    }
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  plugins: ['react', 'prettier'],
+  rules: {
+    'prettier/prettier': 'error',
+    'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.js'] }],
+    'import/prefer-default-export': 'off',
+    "react/jsx-props-no-spreading": [{
+      "html": "ignore" | "enforce",
+      "custom": "ignore" | "enforce",
+      "explicitSpread": "ignore" | "enforce",
+      "exceptions": []
+    }]
+  },
 };
