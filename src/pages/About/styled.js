@@ -22,7 +22,7 @@ export const Container = styled.div`
       width: 100%;
     }
   }
-  div {
+  .box-conteudo {
     max-width: 550px;
     text-align: center;
     display: flex;

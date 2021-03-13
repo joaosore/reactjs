@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ['airbnb', 'prettier', 'prettier/react'],
+  extends: [
+    'airbnb',
+    'prettier',
+    'prettier/react',
+    'plugin:prettier/recommended',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -21,11 +26,13 @@ module.exports = {
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.js'] }],
     'import/prefer-default-export': 'off',
-    "react/jsx-props-no-spreading": [{
-      "html": "ignore" | "enforce",
-      "custom": "ignore" | "enforce",
-      "explicitSpread": "ignore" | "enforce",
-      "exceptions": []
-    }]
+    'react/jsx-props-no-spreading': [
+      {
+        html: 'ignore' | 'enforce',
+        custom: 'ignore' | 'enforce',
+        explicitSpread: 'ignore' | 'enforce',
+        exceptions: [],
+      },
+    ],
   },
 };

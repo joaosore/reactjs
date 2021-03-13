@@ -46,4 +46,9 @@ export default createGlobalStyle`
     font-weight: 400;
   }
 
+  h2 {
+    font-size: 2.5em;
+    font-weight: 400;
+  }
+
 `;

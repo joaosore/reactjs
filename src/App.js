@@ -17,7 +17,7 @@ function App() {
         <Header />
         <Routes />
         <GlobalStyle />
-        {/* <Audio /> */}
+        <Audio />
       </BrowserRouter>
     </Provider>
   );

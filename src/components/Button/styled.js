@@ -11,6 +11,11 @@ export const BoxButton = styled.button`
   z-index: 10;
   span {
     position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
   }
   &::before {
     height: 500%;
@@ -27,16 +32,27 @@ export const BoxButton = styled.button`
     `};
   }
   &:hover {
-    color: #FFF;
+    a {
+      color: #FFF;
+    }
     &::before {
       width: 110%;
     }
   }
   ${(props) => css`
     border: 2px solid ${props.color};
-    color: ${props.color};
+    a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      color: ${props.color};
+    }
     &:hover {
-      color: ${props.hover};
+      a {
+        color: ${props.hover};
+      }
     }
   `};
 `;

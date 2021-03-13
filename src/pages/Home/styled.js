@@ -92,9 +92,12 @@ export const Block = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
-  ${(props) => props.size <= 991 && props.enable && css`
-    display: none;
-  `};
+  ${(props) =>
+    props.size <= 991 &&
+    props.enable &&
+    css`
+      display: none;
+    `};
   h2 {
     font-size: 2.5em;
     max-width: 175px;

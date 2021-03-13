@@ -10,6 +10,8 @@ export const BoxCode = styled.div`
   #bg-eng {
     opacity: 0;
     transition: all 350ms ease-in-out;
+    min-height: 100%;
+    object-fit: cover;
     ${(props) => props.active && css`
       opacity: 1;
     `};

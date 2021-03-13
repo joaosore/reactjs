@@ -12,15 +12,12 @@ const end = (obj) => {
   path = obj.el.getElementsByTagName('path');
   time = setInterval(() => {
     var el = randomInt(0, path.length);
-    path[el].style.fill='#64DDB8';
+    path[el].style.fill = '#64DDB8';
     setTimeout(() => {
-      path[el].style.fill='transparent';
+      path[el].style.fill = 'transparent';
     }, 350);
   }, 150);
-  function randomInt(min, max) {
-    return min + Math.floor((max - min) * Math.random());
-  }
-}
+};
 
 const BG_ENG = () => (
   <ReactVivus
@@ -28,8 +25,8 @@ const BG_ENG = () => (
     option={{
       file: TrilhaSVG,
       animTimingFunction: 'EASE',
-      type: 'sync',
-      duration: 150,
+      type: 'delayed',
+      duration: 50,
     }}
     style={{ height: '100%', width: '100%' }}
     callback={end}
@@ -37,36 +34,33 @@ const BG_ENG = () => (
 );
 
 const Trail = ({ active }) => {
-
   const [reset, setReset] = useState(true);
 
-  function randomInt(min, max) {
-    return min + Math.floor((max - min) * Math.random());
-  }
-
   useEffect(() => {
-    if(active === false) {
+    if (active === false) {
       setTimeout(() => {
         clearInterval(time);
         setReset(false);
       }, 350);
     } else {
       setReset(true);
-      if(path !== '') {
+      if (path !== '') {
         time = setInterval(() => {
           var el = randomInt(0, path.length);
-          path[el].style.fill='#64DDB8';
+          path[el].style.fill = '#64DDB8';
           setTimeout(() => {
-            path[el].style.fill='transparent';
+            path[el].style.fill = 'transparent';
           }, 350);
         }, 150);
       }
     }
   });
 
-  return <BoxCode active={active}>
-    {reset ? <BG_ENG/> : null}
-    </BoxCode>;
+  return <BoxCode active={active}>{reset ? <BG_ENG /> : null}</BoxCode>;
+};
+
+function randomInt(min, max) {
+  return min + Math.floor((max - min) * Math.random());
 }
 
 export default Trail;
