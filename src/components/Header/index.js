@@ -6,16 +6,26 @@ import { Section, Container, Menu } from './styled';
 import Logo from '../Logo';
 
 const Header = () => {
-  return <Section>
+  return (
+    <Section>
       <Container>
-        <Link to="/"><Logo /></Link>
+        <Link to="/">
+          <Logo />
+        </Link>
         <Menu>
-          <li><Link to="/about">about</Link></li>
-          <li><Link to="/project">project</Link></li>
-          <li><Link to="/contact">contact</Link></li>
+          {/* <li>
+            <Link to="/about">about</Link>
+          </li>
+          <li>
+            <Link to="/project">project</Link>
+          </li>
+          <li>
+            <Link to="/contact">contact</Link>
+          </li> */}
         </Menu>
       </Container>
-    </Section>;
-}
+    </Section>
+  );
+};
 
 export default Header;

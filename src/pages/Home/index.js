@@ -1,4 +1,4 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
 
 import BackgroundImg from '../../assets/background.png';
@@ -30,11 +30,11 @@ function Home() {
 
   const hangleAnimeteDev = (status) => {
     setDevAnimate(status);
-  }
+  };
 
   const hangleAnimeteEng = (status) => {
     engDevAnimate(status);
-  }
+  };
 
   const size = useWindowSize();
 
@@ -46,11 +46,9 @@ function Home() {
           size={size.width}
           onMouseEnter={() => hangleAnimeteDev(true)}
           onMouseLeave={() => hangleAnimeteDev(false)}
-          >
+        >
           <h2 className="dev">FRONT E BACK</h2>
-          <Button
-          color="#36BFF4"
-          >see more</Button>
+          {/* <Button color="#36BFF4">see more</Button> */}
           <Code active={devAnimate} />
         </Block>
         <Block
@@ -58,9 +56,9 @@ function Home() {
           size={size.width}
           onMouseEnter={() => hangleAnimeteEng(true)}
           onMouseLeave={() => hangleAnimeteEng(false)}
-          >
+        >
           <h2 className="eng">COMPUTER ENGINNER</h2>
-          <Button color="#64DDB8">see more</Button>
+          {/* <Button color="#64DDB8">see more</Button> */}
           <Trail active={engAnimate} />
         </Block>
       </Box>
@@ -89,13 +87,13 @@ function useWindowSize() {
     }
 
     // Add event listener
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     // Call handler right away so state gets updated with initial window size
     handleResize();
 
     // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []); // Empty array ensures that effect is only run on mount
 
   return windowSize;
