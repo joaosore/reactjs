@@ -4,6 +4,18 @@ object-assign
 @license MIT
 */
 
+/**
+ * vivus - JavaScript library to make drawing animation on SVG
+ * @version v0.4.5
+ * @link https://github.com/maxwellito/vivus
+ * @license MIT
+ */
+
+/**
+* @link https://github.com/gajus/sister for the canonical source repository
+* @license https://github.com/gajus/sister/blob/master/LICENSE BSD 3-Clause
+*/
+
 /** @license React v0.20.1
  * scheduler.production.min.js
  *

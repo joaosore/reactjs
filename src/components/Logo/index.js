@@ -6,14 +6,13 @@ import LogoSVG from '../../assets/logo.svg';
 import { Container } from './styled';
 
 const Logo = () => {
-
-
   const end = (obj) => {
-    obj.el.getElementById('logo-j').style.fill='#FFF';
-    obj.el.getElementById('logo-d').style.fill='#FFF';
-  }
+    obj.el.getElementById('logo-j').style.fill = '#FFF';
+    obj.el.getElementById('logo-d').style.fill = '#FFF';
+  };
 
-  return <Container>
+  return (
+    <Container>
       <ReactVivus
         id="foo"
         option={{
@@ -23,7 +22,8 @@ const Logo = () => {
         }}
         callback={end}
       />
-    </Container>;
-}
+    </Container>
+  );
+};
 
 export default Logo;
