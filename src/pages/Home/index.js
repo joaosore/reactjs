@@ -57,7 +57,7 @@ function Home() {
           onMouseEnter={() => hangleAnimeteEng(true)}
           onMouseLeave={() => hangleAnimeteEng(false)}
         >
-          <h2 className="eng">COMPUTER ENGINNER</h2>
+          <h2 className="eng">COMPUTER ENGINEER</h2>
           {/* <Button color="#64DDB8">see more</Button> */}
           <Trail active={engAnimate} />
         </Block>
